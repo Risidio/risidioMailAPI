@@ -1,11 +1,15 @@
 require('dotenv').config()
 
 import express from 'express';
+import bodyParser from 'body-parser';
 const app = express();
 app.use(express.json());
 
 const cors = require('cors');
 app.use(cors())
+
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
 
 const nodemailer = require('nodemailer');
 const transporter = nodemailer.createTransport({
