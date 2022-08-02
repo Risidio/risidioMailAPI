@@ -51,17 +51,15 @@ app.post("/submit-project", (req, res) => {
               <p>${req.body.description}</p>
             </div>` // html body
     };
-    console.log(req.body);
-    res.json({ status: 'Request Successful!' });
     // send mail with defined transport object
     transporter.sendMail(projectMailOptions, function (error, info) {
         if (error) {
-            res.json({ status: 'Request Failed' });
             console.log(error);
+            res.json({ status: 'Request Failed', emailSent: false });
         }
         else {
             console.log('Message sent: ' + info.response);
-            res.json({ status: "Email sent" });
+            res.json({ status: "Email sent", emailSent: true });
         }
     });
 });
@@ -85,17 +83,15 @@ app.post("/contact", (req, res) => {
               <p>${req.body.message}</p>
             </div>` // html body
     };
-    console.log(req.body);
-    res.json({ status: 'Request Successful!' });
     // send mail with defined transport object
     transporter.sendMail(mailOptions, function (error, info) {
         if (error) {
-            res.json({ status: 'Request Failed' });
             console.log(error);
+            res.json({ status: 'Request Failed', emailSent: false });
         }
         else {
             console.log('Message sent: ' + info.response);
-            res.json({ status: "Email sent" });
+            res.json({ status: "Email sent", emailSent: true });
         }
     });
 });

@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon dist/main.js",
-    "compile": "cd src && npx tsc"
+    "compile": "cd src && npx tsc",
+    "start": "node dist/main.js"
   },
   "keywords": [],
   "author": "",
