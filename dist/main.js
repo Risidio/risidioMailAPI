@@ -15,7 +15,7 @@ app.use(body_parser_1.default.json());
 const nodemailer = require('nodemailer');
 const transporter = nodemailer.createTransport({
     pool: true,
-    host: "uk53.siteground.eu",
+    host: "uk77.siteground.eu",
     secureConnection: false,
     port: 465,
     tls: {
@@ -70,7 +70,7 @@ app.post("/contact", (req, res) => {
     const mailOptions = {
         from: process.env.A1,
         to: process.env.A4,
-        subject: `${req.body.contactUsName} sent you a message from the Indige Contact Form!`,
+        subject: `${req.body.contactUsName} sent you a message from the The Stories That Make Us Form!`,
         text: `${req.body.message}`,
         html: `<div style="margin: 20px; text-align: left; border: solid 1px grey; border-radius: 5px; padding: 20px;">
               <h3 style="text-align: center;">You recieved a new message from your Indige Form </h3>
